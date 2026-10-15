@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f8f4">
+  <meta name="description" content="English With Ammi: a friendly 21-day English speaking course with Urdu translations, listening, practice and confidence-building missions.">
+  <title>English With Ammi · 21-Day Speaking Course</title>
+  <style>
+    :root{font-size:calc(16px * var(--font-scale));--ink:#203933;--muted:#667b72;--paper:#f7f8f4;--white:#fff;--forest:#1d6556;--forest2:#e6f4ee;--coral:#e79461;--peach:#fff0e5;--border:#e0e9df;--shadow:0 10px 30px rgba(29,64,48,.07);--font-scale:1}
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:1rem;line-height:1.55}
+    button,input,select{font:inherit}
+    button{cursor:pointer}
+    button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #b96939;outline-offset:3px}
+    button:disabled{cursor:not-allowed;opacity:.55}
+    .shell{max-width:1270px;margin:auto;padding:0 22px 60px}
+    .header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:24px 0 16px;flex-wrap:wrap}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:850;font-size:1.08rem;letter-spacing:-.025em}
+    .logo-mark{width:45px;height:45px;border-radius:16px;background:var(--forest);color:white;display:grid;place-items:center;font-size:25px;box-shadow:0 5px 15px #1d655638}
+    .meta{font-size:.79rem;letter-spacing:.13em;color:var(--muted);text-transform:uppercase;font-weight:800}
+    .control-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .font-control{background:#fff;border:1px solid var(--border);border-radius:100px;display:flex;align-items:center;padding:3px}
+    .font-control button{border:0;background:transparent;color:var(--ink);padding:7px 11px;border-radius:40px;font-weight:800}
+    .font-control button:hover{background:var(--forest2)}
+    .top-chip{border:1px solid #d5e7dc;background:#eaf5ed;padding:8px 15px;border-radius:999px;font-size:.84rem;color:var(--forest);font-weight:800}
+    .hero{display:grid;grid-template-columns:1.65fr 1fr;gap:26px;align-items:stretch;background:linear-gradient(125deg,#f4e9d6,#f2eadb 46%,#e1f0e5);border-radius:28px;padding:35px 38px;margin:8px 0 22px;overflow:hidden;position:relative}
+    .hero:after{content:'✿';position:absolute;font-size:205px;line-height:1;right:-15px;top:-88px;color:#d4ddba65;pointer-events:none}
+    .eyebrow{font-size:.78rem;text-transform:uppercase;font-weight:900;letter-spacing:.16em;color:#936a45;margin:0 0 9px}
+    h1{font-size:clamp(2rem,4vw,3.25rem);letter-spacing:-.045em;line-height:1.12;margin:0 0 11px}
+    h2,h3,p{margin-top:0}
+    .hero p{color:#506d5f;max-width:570px;font-size:1.02rem;margin-bottom:9px}
+    .ur{font-size:1.04em;font-family:system-ui,"Noto Naskh Arabic","Noto Nastaliq Urdu",Tahoma,serif;line-height:1.9;letter-spacing:0}
+    .hero .ur{font-size:1.1rem;color:#466250}
+    .hero-right{display:flex;justify-content:center;align-items:center;z-index:1}
+    .hero-note{width:100%;max-width:315px;background:#ffffffc9;border:1px solid #fff;border-radius:23px;padding:21px 23px;box-shadow:0 10px 26px #6e79501c;transform:rotate(2deg)}
+    .hero-note .big-number{font-size:3rem;font-weight:900;letter-spacing:-.05em;color:var(--forest);line-height:1.1}
+    .hero-note b{font-size:.96rem;display:block;margin:6px 0}
+    .hero-note small{font-size:.88rem;color:var(--muted)}
+    .prog-track{height:11px;background:#dfeadd;border-radius:20px;overflow:hidden;margin:13px 0 7px}
+    .prog-fill{height:100%;background:linear-gradient(90deg,#62a883,#1b6658);border-radius:20px;transition:width .3s}
+    .navtabs{display:flex;gap:8px;align-items:center;overflow:auto;padding:4px 0 15px}
+    .navtab{flex-shrink:0;background:#fff;border:1px solid var(--border);border-radius:100px;padding:12px 19px;color:#3b574b;font-weight:760}
+    .navtab.active{background:var(--forest);color:white;border-color:var(--forest)}
+    .layout{display:grid;grid-template-columns:270px minmax(0,1fr);gap:22px;align-items:start}
+    .side{background:white;border:1px solid var(--border);border-radius:23px;padding:19px 14px 15px;box-shadow:var(--shadow);position:sticky;top:18px;max-height:calc(100vh - 40px);overflow:auto}
+    .side-title{font-size:.88rem;font-weight:850;padding:3px 10px 12px}
+    .week-label{font-size:.7rem;color:#83978d;letter-spacing:.14em;text-transform:uppercase;font-weight:900;margin:15px 12px 7px}
+    .day-btn{width:100%;border:0;background:transparent;display:flex;align-items:center;text-align:left;gap:10px;padding:10px 10px;margin:2px 0;border-radius:13px;color:#40574f}
+    .day-btn:hover{background:#f1f6f2}
+    .day-btn.active{background:#e4f3eb;color:#115c49;font-weight:800}
+    .day-num{width:31px;height:31px;border-radius:10px;flex-shrink:0;display:grid;place-items:center;background:#edf1eb;font-size:.83rem;font-weight:850}
+    .day-btn.active .day-num{background:var(--forest);color:white}
+    .day-btn.done .day-num{background:#daf0de;color:#23704e}
+    .day-text{font-size:.84rem;line-height:1.35;font-weight:650}
+    .day-status{margin-left:auto;color:#298558;font-size:.92rem}
+    .content{min-width:0}
+    .panel{background:var(--white);border:1px solid var(--border);border-radius:23px;padding:25px 29px;box-shadow:var(--shadow);margin-bottom:17px}
+    .lesson-top{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap}
+    .small-label{font-size:.77rem;text-transform:uppercase;letter-spacing:.12em;color:var(--forest);font-weight:900;margin:0 0 8px}
+    .lesson-title{font-size:clamp(1.6rem,3vw,2.25rem);line-height:1.2;letter-spacing:-.04em;margin:0 0 5px}
+    .lesson-title-ur{font-size:1.1rem;color:#65786e;margin:0 0 11px}
+    .badge{display:inline-block;border-radius:99px;background:#e8f5ea;color:#21634d;padding:8px 12px;font-size:.78rem;font-weight:850}
+    .intro{color:#54695f;max-width:730px;margin:9px 0 0}
+    .goal-box{margin-top:16px;background:#f3f8f3;border:1px solid #e5eee7;border-radius:15px;padding:15px 17px}
+    .goal-box p{margin:0}.goal-box .ur{color:#607767;font-size:.98rem}
+    .section-title{font-size:1.32rem;letter-spacing:-.026em;margin:0 0 5px}
+    .section-sub{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+    .section-head{display:flex;justify-content:space-between;gap:10px;align-items:start;flex-wrap:wrap}
+    .word-list{display:flex;gap:9px;flex-wrap:wrap}
+    .word{display:flex;flex-direction:column;gap:1px;min-width:100px;flex:1;border:1px solid #e2e9df;border-radius:13px;padding:11px 12px;background:#fafcf9}
+    .word button{align-self:flex-start;padding:0;border:0;background:transparent;text-align:left;color:var(--forest);font-weight:850;font-size:.96rem}
+    .word .ur{font-size:.89rem;color:var(--muted)}
+    .phrase{display:flex;align-items:center;gap:14px;justify-content:space-between;padding:15px 0;border-bottom:1px solid #edf1eb}
+    .phrase:last-child{border-bottom:0;padding-bottom:0}
+    .english{font-size:1.07rem;font-weight:800;line-height:1.42;margin-bottom:2px}
+    .translation{color:#718178;font-size:.97rem;line-height:1.9}
+    .audio-btn,.soft-btn{border:1px solid #cfe8d8;background:#f0f8f1;color:var(--forest);padding:10px 14px;border-radius:12px;font-weight:800;display:inline-flex;align-items:center;gap:7px;justify-content:center;white-space:nowrap}
+    .audio-btn:hover,.soft-btn:hover{background:#e4f2e8}
+    .audio-btn{min-width:90px}
+    .audio-btn.playing{background:#cce9d7;border-color:#a3d2b5}
+    .audio-icon{font-size:.85rem}
+    .toggleline{display:flex;align-items:center;gap:7px;color:#567166;font-size:.83rem;font-weight:650;user-select:none}
+    .toggleline input{width:18px;height:18px;accent-color:var(--forest)}
+    .talk{display:grid;gap:10px;margin:12px 0 15px}
+    .bubble{max-width:88%;background:#f4f7f2;border-radius:17px 17px 17px 4px;padding:12px 16px}
+    .bubble.b{background:#edf5ea;border-radius:17px 17px 4px 17px;margin-left:auto}
+    .bubble .who{font-size:.73rem;font-weight:800;color:var(--forest);text-transform:uppercase;letter-spacing:.05em}
+    .bubble .english{font-size:1rem;margin:3px 0}
+    .bubble .ur{font-size:.89rem;color:#61736a}
+    .listening-tools{display:flex;gap:9px;flex-wrap:wrap}
+    .quiz-options{display:grid;gap:10px;margin:15px 0}
+    .quiz-option{padding:14px 17px;text-align:left;border:1.5px solid #dce9df;border-radius:14px;background:#fff;display:flex;align-items:center;gap:12px;font-weight:710;color:#344d41}
+    .quiz-option:hover{background:#f6faf6}
+    .quiz-option.correct{background:#e4f5e6;border-color:#75bb90}
+    .quiz-option.wrong{background:#fff0e9;border-color:#e9a78a}
+    .option-dot{width:30px;height:30px;display:grid;place-items:center;flex-shrink:0;background:#f2f6f2;border-radius:100px;font-weight:850}
+    .feedback{border-radius:13px;padding:12px 16px;font-weight:730;margin:12px 0}
+    .feedback.good{background:#e5f5e7;color:#206a44}.feedback.try{background:#fff3e7;color:#875533}
+    .mission{background:#fff6eb;border:1px solid #f5ddc5;border-radius:19px;padding:18px 21px;margin-bottom:14px}
+    .mission p{margin-bottom:4px;font-weight:720}
+    .mission .ur{font-weight:500;color:#8c6750}
+    .big-check{display:flex;gap:12px;align-items:center;cursor:pointer;background:#f8faf6;border:1px solid #e2e8e0;border-radius:13px;padding:15px;font-weight:810}
+    .big-check input{accent-color:var(--forest);width:23px;height:23px;flex-shrink:0}
+    .record-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px;align-items:center}
+    .record-note{font-size:.79rem;color:var(--muted);margin:8px 0 0}
+    .record-playback{width:100%;max-width:320px;display:block;margin-top:10px}
+    .primary{border:0;background:var(--forest);color:white;padding:14px 22px;border-radius:14px;font-weight:850;box-shadow:0 5px 13px #1b615527}
+    .primary:hover{background:#155444}
+    .primary:disabled{box-shadow:none}
+    .next-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding-top:7px}
+    .tiny{font-size:.84rem;color:#788b80}
+    .complete-banner{padding:18px;border:1px solid #cde7d3;background:#edf9ed;color:#236a47;border-radius:17px;font-weight:800;margin:12px 0 18px}
+    .all-days{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+    .day-card{text-align:left;background:white;border:1px solid #dce8dd;border-radius:19px;padding:17px 19px;display:flex;flex-direction:column;align-items:flex-start;gap:7px;color:var(--ink)}
+    .day-card:hover{background:#f5fbf6}
+    .day-card .ur{font-size:.91rem;color:var(--muted)}
+    .pill{border-radius:8px;padding:4px 8px;background:#eef3ef;color:var(--forest);font-size:.73rem;font-weight:850}
+    .searchbar{width:100%;border:1.5px solid #d5e5d8;border-radius:14px;padding:15px 17px;outline:none;background:#fff;color:var(--ink);margin-bottom:18px}
+    .phrasebook-group{margin-bottom:22px}.phrasebook-group h3{font-size:1.02rem;margin-bottom:10px}
+    .book-row{display:flex;justify-content:space-between;align-items:center;gap:12px;border-bottom:1px solid #edf1ed;padding:9px 0}
+    .book-row .english{font-size:.95rem;margin-bottom:0}
+    .empty{color:var(--muted);padding:20px;text-align:center}
+    .footer{font-size:.82rem;color:#7a8b80;margin-top:25px;text-align:center}
+    .mobile-day{display:none;margin:0 0 15px}.mobile-day select{width:100%;background:#fff;color:#345243;border:1px solid #d7e6d9;padding:13px;border-radius:12px}
+    .toast{position:fixed;z-index:100;bottom:25px;left:50%;transform:translateX(-50%);border-radius:13px;background:#203d32;color:white;padding:12px 17px;max-width:min(92vw,490px);box-shadow:0 10px 25px #102a2230;font-size:.87rem;text-align:center}
+    .small-space{margin-bottom:0}
+    @media(max-width:850px){.layout{grid-template-columns:1fr}.side{display:none}.mobile-day{display:block}.hero{padding:26px}.hero-right{justify-content:flex-end}}
+    @media(max-width:610px){.shell{padding:0 13px 42px}.header{padding:17px 2px 14px;gap:10px}.meta{display:none}.logo-mark{height:39px;width:39px;border-radius:13px}.logo{font-size:1rem}.top-chip{font-size:.7rem;padding:7px 10px}.hero{grid-template-columns:1fr;gap:17px;border-radius:21px;padding:24px 21px;margin:2px 0 16px}.hero-right{justify-content:flex-start}.hero-note{max-width:none;transform:none;padding:14px 18px}.hero-note .big-number{font-size:2rem}.hero-note .prog-track{margin:9px 0 4px}.hero p{font-size:.91rem}.navtabs{gap:7px}.navtab{font-size:.84rem;padding:10px 13px}.panel{padding:20px 17px;border-radius:18px}.phrase{gap:8px;align-items:flex-start}.phrase .english{font-size:1rem}.audio-btn{min-width:73px;padding:9px 10px;font-size:.84rem}.all-days{grid-template-columns:1fr}.word{min-width:110px}.bubble{max-width:96%}.lesson-title{font-size:1.7rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.prog-fill{transition:none}}
+    @media print{.header .control-row,.navtabs,.side,.mobile-day,.audio-btn,.record-tools,.quiz-options,.next-row{display:none!important}.hero{background:#fff;padding:10px}.layout{display:block}.panel{box-shadow:none;break-inside:avoid}.shell{max-width:none}}
+  </style>
+</head>
+<body>
+<div id="app" class="shell" aria-live="off"></div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+<script>
+
+const LESSONS = [
+  {
+    title:'Hello & My Name', ur:'سلام اور تعارف', focus:'Start a friendly conversation',
+    goal:'Today, you will introduce yourself in English.',
+    goalUr:'آج آپ انگریزی میں اپنا تعارف کروائیں گی۔',
+    words:[['Hello','سلام'],['Name','نام'],['From','سے'],['Live','رہنا'],['Nice','اچھا']],
+    phrases:[
+      ['Hello! How are you?','السلام علیکم! آپ کیسے ہیں؟'],
+      ['My name is _____.','میرا نام _____ ہے۔'],
+      ['I am from Pakistan.','میں پاکستان سے ہوں۔'],
+      ['I live in Canada.','میں کینیڈا میں رہتی ہوں۔'],
+      ['Nice to meet you.','آپ سے مل کر خوشی ہوئی۔']
+    ],
+    dialogue:[['A','Hello! What is your name?','ہیلو! آپ کا نام کیا ہے؟'],['B','My name is _____.','میرا نام _____ ہے۔'],['A','Nice to meet you.','آپ سے مل کر خوشی ہوئی۔'],['B','Nice to meet you, too.','مجھے بھی خوشی ہوئی۔']],
+    quiz:{question:'What can you say when meeting someone?',options:['Nice to meet you.','I need a bag.','It is raining.'],answer:0,why:'“Nice to meet you” is a friendly greeting.'},
+    mission:'Say hello and introduce yourself to someone at home.',missionUr:'گھر میں کسی کو انگریزی میں سلام کریں اور اپنا نام بتائیں۔',
+    tip:'I am = I’m. Both are correct. Speak slowly!',tipUr:'I am اور I’m دونوں درست ہیں۔ آہستہ بولیں۔'
+  },
+  {
+    title:'Please, Thank You & Sorry',ur:'ادب سے بات کرنا',focus:'Use kind, polite English',
+    goal:'Ask politely and thank someone.',goalUr:'نرمی سے درخواست کرنا اور شکریہ کہنا سیکھیں۔',
+    words:[['Please','براہ کرم'],['Thank you','شکریہ'],['Sorry','معاف کیجیے'],['Welcome','خوش آمدید'],['Excuse me','معاف کیجیے / توجہ دیجیے']],
+    phrases:[['Please help me.','براہ کرم میری مدد کریں۔'],['Thank you very much.','آپ کا بہت شکریہ۔'],['You are welcome.','کوئی بات نہیں / خوشی سے۔'],['Excuse me, please.','معاف کیجیے، ایک بات پوچھنی ہے۔'],['I am sorry.','مجھے افسوس ہے۔']],
+    dialogue:[['A','Excuse me, can you help me?','معاف کیجیے، کیا آپ مدد کر سکتے ہیں؟'],['B','Yes, of course.','جی ہاں، ضرور۔'],['A','Thank you very much.','آپ کا بہت شکریہ۔'],['B','You are welcome.','کوئی بات نہیں۔']],
+    quiz:{question:'Someone helps you. What do you say?',options:['Where is it?','Thank you very much.','I am from Pakistan.'],answer:1,why:'Thank you is the polite response.'},
+    mission:'Say “please” and “thank you” out loud three times today.',missionUr:'آج تین مرتبہ اونچی آواز میں please اور thank you بولیں۔',
+    tip:'A kind smile and a short sentence are enough.',tipUr:'ایک ہلکی مسکراہٹ اور چھوٹا سا جملہ کافی ہے۔'
+  },
+  {
+    title:'Please Speak Slowly',ur:'انگریزی سمجھنے میں مدد',focus:'Stay calm when you do not understand',
+    goal:'Ask someone to repeat a sentence without feeling nervous.',goalUr:'بغیر گھبرائے کسی کو بات دہرانے کے لیے کہیں۔',
+    words:[['Slowly','آہستہ'],['Again','دوبارہ'],['Understand','سمجھنا'],['English','انگریزی'],['Learning','سیکھنا']],
+    phrases:[['I am learning English.','میں انگریزی سیکھ رہی ہوں۔'],['Please speak slowly.','براہ کرم آہستہ بولیں۔'],['Can you say that again?','کیا آپ دوبارہ کہہ سکتے ہیں؟'],['I do not understand.','مجھے سمجھ نہیں آیا۔'],['I understand a little English.','مجھے تھوڑی انگریزی سمجھ آتی ہے۔']],
+    dialogue:[['A','Would you like a receipt?','کیا آپ کو رسید چاہیے؟'],['B','Please speak slowly.','براہ کرم آہستہ بولیں۔'],['A','Do you want a receipt?','کیا آپ کو رسید چاہیے؟'],['B','Yes, please. Thank you.','جی ہاں، شکریہ۔']],
+    quiz:{question:'You did not understand a question. Say:',options:['Nice weather!','Can you say that again?','I live in Canada.'],answer:1,why:'Asking again is confident, not embarrassing.'},
+    mission:'Practise “Please speak slowly” in a clear, calm voice.',missionUr:'آرام سے اور صاف آواز میں Please speak slowly بولیں۔',
+    tip:'You do not need perfect English to communicate.',tipUr:'بات سمجھانے کے لیے مکمل یا پرفیکٹ انگریزی ضروری نہیں۔'
+  },
+  {
+    title:'My Family & Home',ur:'گھر اور خاندان',focus:'Talk about your family and where you live',
+    goal:'Say simple things about your home and family.',goalUr:'اپنے گھر اور خاندان کے بارے میں آسان باتیں کریں۔',
+    words:[['Family','خاندان'],['Daughter','بیٹی'],['Son','بیٹا'],['Home','گھر'],['Together','اکٹھے']],
+    phrases:[['This is my family.','یہ میرا خاندان ہے۔'],['I live with my family.','میں اپنے خاندان کے ساتھ رہتی ہوں۔'],['I have two daughters.','میری دو بیٹیاں ہیں۔'],['We live in Newfoundland.','ہم نیوفاؤنڈ لینڈ میں رہتے ہیں۔'],['I am at home today.','میں آج گھر پر ہوں۔']],
+    dialogue:[['A','Do you live here?','کیا آپ یہاں رہتی ہیں؟'],['B','Yes, I live here.','جی ہاں، میں یہاں رہتی ہوں۔'],['A','Do you live with family?','کیا خاندان کے ساتھ رہتی ہیں؟'],['B','Yes, with my family.','جی ہاں، اپنے خاندان کے ساتھ۔']],
+    quiz:{question:'Which sentence talks about your home?',options:['I live with my family.','How much is this?','It is cold.'],answer:0,why:'“I live with my family” tells someone about your home.'},
+    mission:'Tell a family member two sentences about your home in English.',missionUr:'گھر والے کو اپنے گھر کے بارے میں انگریزی کے دو جملے بتائیں۔',
+    tip:'Change the number of children to match your own family.',tipUr:'اپنے خاندان کے مطابق بیٹیوں یا بیٹوں کی تعداد بدل سکتی ہیں۔'
+  },
+  {
+    title:'Numbers & Prices',ur:'گنتی اور قیمتیں',focus:'Understand everyday prices',
+    goal:'Ask how much something costs.',goalUr:'کسی چیز کی قیمت پوچھنا سیکھیں۔',
+    words:[['One','ایک'],['Five','پانچ'],['Ten','دس'],['Twenty','بیس'],['Dollar','ڈالر']],
+    phrases:[['How much is this?','اس کی قیمت کتنی ہے؟'],['It is five dollars.','یہ پانچ ڈالر کا ہے۔'],['That is too expensive.','یہ بہت مہنگا ہے۔'],['Do you have a cheaper one?','کیا آپ کے پاس سستا والا ہے؟'],['I need two, please.','مجھے دو چاہیے، براہ کرم۔']],
+    dialogue:[['A','How much is this?','اس کی قیمت کتنی ہے؟'],['B','It is ten dollars.','یہ دس ڈالر کا ہے۔'],['A','Do you have a cheaper one?','کیا سستا والا ہے؟'],['B','Yes, this one is five dollars.','جی، یہ پانچ ڈالر کا ہے۔']],
+    quiz:{question:'What do you ask to learn a price?',options:['How are you?','How much is this?','Where do you live?'],answer:1,why:'How much = قیمت کتنی؟'},
+    mission:'Point to five things and say “one, two, three, four, five.”',missionUr:'پانچ چیزوں کو دیکھ کر انگریزی میں ایک سے پانچ تک گنیں۔',
+    tip:'Practise 1–20 aloud. You can replay the words.',tipUr:'ایک سے بیس تک اونچی آواز میں گنتی کی مشق کریں۔'
+  },
+  {
+    title:'Simple Questions',ur:'آسان سوال',focus:'Ask where, what and when',
+    goal:'Start questions with “where”, “what”, and “when”.',goalUr:'Where، What اور When سے سوال بنانا سیکھیں۔',
+    words:[['Where','کہاں'],['What','کیا'],['When','کب'],['Who','کون'],['Why','کیوں']],
+    phrases:[['Where is the washroom?','واش روم کہاں ہے؟'],['What is this?','یہ کیا ہے؟'],['When does it open?','یہ کب کھلتا ہے؟'],['Who can help me?','کون میری مدد کر سکتا ہے؟'],['Why is it closed?','یہ بند کیوں ہے؟']],
+    dialogue:[['A','Excuse me, where is the washroom?','معاف کیجیے، واش روم کہاں ہے؟'],['B','It is over there.','وہ وہاں ہے۔'],['A','Thank you.','شکریہ۔'],['B','You are welcome.','کوئی بات نہیں۔']],
+    quiz:{question:'You want to know a place. Start with:',options:['When','Where','Who'],answer:1,why:'Where asks about a place.'},
+    mission:'Ask three “where” questions about things in your home.',missionUr:'گھر میں تین چیزوں کے بارے میں Where والے سوال پوچھیں۔',
+    tip:'A short question is better than being silent.',tipUr:'خاموش رہنے سے بہتر ہے چھوٹا سا سوال پوچھ لینا۔'
+  },
+  {
+    title:'Week 1 Confidence Review',ur:'پہلے ہفتے کی دہرائی',focus:'Use the English you already know',
+    goal:'Put greeting, thanks and asking for help together.',goalUr:'سلام، شکریہ اور مدد مانگنے کو ایک گفتگو میں شامل کریں۔',
+    words:[['Hello','سلام'],['Please','براہ کرم'],['Again','دوبارہ'],['Where','کہاں'],['Thanks','شکریہ']],
+    phrases:[['Hello, my name is _____.','ہیلو، میرا نام _____ ہے۔'],['I am learning English.','میں انگریزی سیکھ رہی ہوں۔'],['Can you help me, please?','کیا آپ میری مدد کر سکتے ہیں؟'],['Please say that again.','براہ کرم دوبارہ کہیے۔'],['Thank you for your help.','مدد کے لیے شکریہ۔']],
+    dialogue:[['A','Hello! How can I help you?','ہیلو! میں کیسے مدد کر سکتا ہوں؟'],['B','I am learning English.','میں انگریزی سیکھ رہی ہوں۔'],['A','No problem. What do you need?','کوئی بات نہیں۔ آپ کو کیا چاہیے؟'],['B','Please speak slowly.','براہ کرم آہستہ بولیں۔']],
+    quiz:{question:'Which sentence helps when English feels fast?',options:['Please speak slowly.','That is five dollars.','It is sunny.'],answer:0,why:'You can always ask people to slow down.'},
+    mission:'Act out the dialogue twice. Second time, look away from the screen.',missionUr:'گفتگو دو مرتبہ بولیں۔ دوسری بار اسکرین دیکھے بغیر کوشش کریں۔',
+    tip:'Review days 1–6 anytime. Repeating is how confidence grows.',tipUr:'پچھلے سبق دوبارہ پڑھنا بالکل ٹھیک ہے۔ مشق سے اعتماد بڑھتا ہے۔'
+  },
+  {
+    title:'At the Grocery Store',ur:'گروسری اسٹور میں',focus:'Find food and ask store workers',
+    goal:'Ask for an item in a grocery shop.',goalUr:'دکان میں کسی چیز کے بارے میں پوچھیں۔',
+    words:[['Bread','روٹی / بریڈ'],['Milk','دودھ'],['Eggs','انڈے'],['Rice','چاول'],['Aisle','سامان والی قطار']],
+    phrases:[['Excuse me, where is the milk?','معاف کیجیے، دودھ کہاں ہے؟'],['Do you have basmati rice?','کیا آپ کے پاس باسمتی چاول ہیں؟'],['I am looking for bread.','میں بریڈ ڈھونڈ رہی ہوں۔'],['Which aisle is it in?','وہ کس قطار میں ہے؟'],['That is everything, thank you.','بس اتنا ہی، شکریہ۔']],
+    dialogue:[['A','Can I help you find something?','کیا آپ کچھ ڈھونڈ رہی ہیں؟'],['B','Yes, where is the rice?','جی، چاول کہاں ہیں؟'],['A','Aisle four.','چوتھی قطار میں۔'],['B','Thank you so much.','بہت شکریہ۔']],
+    quiz:{question:'You cannot find rice. Say:',options:['I am cold.','Where is the rice?','My name is _____.'],answer:1,why:'Ask “Where is the rice?”'},
+    mission:'Make a five-item shopping list, and read it in English.',missionUr:'پانچ چیزوں کی خریداری کی فہرست بنائیں اور انگریزی میں پڑھیں۔',
+    tip:'In Canada, workers often ask, “Can I help you?”',tipUr:'کینیڈا میں دکان والے اکثر پوچھتے ہیں: Can I help you?'
+  },
+  {
+    title:'At the Checkout',ur:'کیش کاؤنٹر پر',focus:'Pay, ask for a bag or receipt',
+    goal:'Answer common cashier questions.',goalUr:'کیشیئر کے عام سوالوں کا جواب دیں۔',
+    words:[['Bag','تھیلا'],['Receipt','رسید'],['Cash','نقد'],['Card','کارڈ'],['Total','کل رقم']],
+    phrases:[['Can I have a bag, please?','کیا مجھے ایک تھیلا مل سکتا ہے؟'],['Yes, I need a receipt.','جی ہاں، مجھے رسید چاہیے۔'],['I will pay by card.','میں کارڈ سے پیسے دوں گی۔'],['I will pay with cash.','میں نقد ادا کروں گی۔'],['That is all, thank you.','بس اتنا ہی، شکریہ۔']],
+    dialogue:[['A','Would you like a bag?','کیا آپ کو تھیلا چاہیے؟'],['B','Yes, please.','جی ہاں، براہ کرم۔'],['A','Cash or card?','نقد یا کارڈ؟'],['B','Card, please.','کارڈ، براہ کرم۔']],
+    quiz:{question:'Cashier asks: “Cash or card?” You pay by card:',options:['Card, please.','Where is the bus?','I am tired.'],answer:0,why:'“Card, please” is enough.'},
+    mission:'Pretend to buy food. Practise the checkout dialogue.',missionUr:'گھر میں دکان کا کھیل بنا کر کیش کاؤنٹر کی گفتگو کریں۔',
+    tip:'A one-word answer like “Card, please” is completely okay.',tipUr:'Card, please جیسا چھوٹا جواب بھی بالکل ٹھیک ہے۔'
+  },
+  {
+    title:'Directions & Transport',ur:'راستہ اور سواری',focus:'Find your way around',
+    goal:'Ask where a place is and understand simple directions.',goalUr:'راستہ پوچھیں اور آسان ہدایات سمجھیں۔',
+    words:[['Left','بائیں'],['Right','دائیں'],['Straight','سیدھا'],['Near','قریب'],['Stop','اسٹاپ / رکنا']],
+    phrases:[['Where is the bus stop?','بس اسٹاپ کہاں ہے؟'],['Please go straight.','براہ کرم سیدھا جائیں۔'],['Turn left here.','یہاں بائیں مڑیں۔'],['Is it far from here?','کیا یہ یہاں سے دور ہے؟'],['Please stop here.','براہ کرم یہاں روک دیں۔']],
+    dialogue:[['A','Excuse me, is the pharmacy near here?','معاف کیجیے، کیا فارمیسی قریب ہے؟'],['B','Yes. Go straight and turn right.','جی، سیدھا جائیں پھر دائیں مڑیں۔'],['A','Thank you!','شکریہ!'],['B','No problem.','کوئی مسئلہ نہیں۔']],
+    quiz:{question:'“Turn left” means:',options:['دائیں مڑیں','بائیں مڑیں','سیدھا جائیں'],answer:1,why:'Left = بائیں, right = دائیں.'},
+    mission:'Walk around your home saying “left”, “right” and “straight”.',missionUr:'گھر میں چلتے ہوئے left، right اور straight بول کر مشق کریں۔',
+    tip:'Ask “Can you show me on the map?” if needed.',tipUr:'ضرورت ہو تو کہہ سکتی ہیں: Can you show me on the map?'
+  },
+  {
+    title:'Weather & Small Talk',ur:'موسم کی بات چیت',focus:'Chat for a moment with a neighbour',
+    goal:'Say one thing about the weather.',goalUr:'موسم کے بارے میں ایک دو باتیں کریں۔',
+    words:[['Cold','سرد'],['Warm','گرم'],['Rain','بارش'],['Snow','برف'],['Windy','ہوا چل رہی ہے']],
+    phrases:[['It is cold today.','آج بہت سردی ہے۔'],['It is raining.','بارش ہو رہی ہے۔'],['It is snowing.','برف پڑ رہی ہے۔'],['It is a nice day.','آج اچھا دن ہے۔'],['Stay warm!','گرم کپڑے پہنیے / گرم رہیے!']],
+    dialogue:[['A','Good morning! It is cold today.','صبح بخیر! آج سردی ہے۔'],['B','Yes, very cold!','جی، بہت سردی!'],['A','Have a nice day.','آپ کا دن اچھا گزرے۔'],['B','You too!','آپ کا بھی!']],
+    quiz:{question:'You see snow outside. Say:',options:['It is snowing.','I need milk.','How much is this?'],answer:0,why:'Snowing means snow is falling.'},
+    mission:'Look outside and describe the weather in one English sentence.',missionUr:'باہر دیکھ کر موسم کے بارے میں انگریزی میں ایک جملہ کہیں۔',
+    tip:'“Have a nice day” and “You too” are useful everyday phrases.',tipUr:'Have a nice day اور You too روزمرہ میں بہت کام آتے ہیں۔'
+  },
+  {
+    title:'Book an Appointment',ur:'اپائنٹمنٹ لینا',focus:'Ask for a time at a clinic or office',
+    goal:'Book or change a simple appointment.',goalUr:'اپائنٹمنٹ لینے یا وقت بدلنے کے لیے بات کریں۔',
+    words:[['Appointment','ملاقات کا وقت'],['Today','آج'],['Tomorrow','کل (آنے والا)'],['Morning','صبح'],['Available','خالی وقت']],
+    phrases:[['I would like an appointment, please.','مجھے اپائنٹمنٹ چاہیے، براہ کرم۔'],['Is there a time available tomorrow?','کیا کل کوئی وقت خالی ہے؟'],['Morning is better for me.','میرے لیے صبح کا وقت بہتر ہے۔'],['Can I change my appointment?','کیا میں وقت بدل سکتی ہوں؟'],['What time should I come?','مجھے کتنے بجے آنا چاہیے؟']],
+    dialogue:[['A','Hello, how can I help?','ہیلو، میں کیسے مدد کر سکتا ہوں؟'],['B','I would like an appointment.','مجھے اپائنٹمنٹ چاہیے۔'],['A','Is Friday morning okay?','کیا جمعہ کی صبح ٹھیک ہے؟'],['B','Yes, thank you.','جی ہاں، شکریہ۔']],
+    quiz:{question:'What is a polite way to request a booking?',options:['It is windy.','I would like an appointment, please.','This is my family.'],answer:1,why:'“I would like...” is a polite request.'},
+    mission:'Practise asking for an appointment, using a weekday of your choice.',missionUr:'اپنی پسند کے دن کا نام لے کر اپائنٹمنٹ مانگنے کی مشق کریں۔',
+    tip:'Keep a pen nearby when someone tells you the time.',tipUr:'وقت بتانے پر لکھنے کے لیے قلم پاس رکھیں۔'
+  },
+  {
+    title:'At the Pharmacy',ur:'فارمیسی میں',focus:'Explain a simple need at a pharmacy',
+    goal:'Ask to speak with a pharmacist.',goalUr:'فارماسسٹ سے بات کرنے کی درخواست کریں۔',
+    words:[['Pharmacy','دوا کی دکان'],['Pharmacist','دوا کا ماہر'],['Pain','درد'],['Cough','کھانسی'],['Allergy','الرجی']],
+    phrases:[['May I speak to the pharmacist?','کیا میں فارماسسٹ سے بات کر سکتی ہوں؟'],['I have a cough.','مجھے کھانسی ہے۔'],['I have an allergy.','مجھے الرجی ہے۔'],['I have a question about this medicine.','مجھے اس دوا کے بارے میں سوال پوچھنا ہے۔'],['Please explain it slowly.','براہ کرم آہستہ سمجھائیے۔']],
+    dialogue:[['A','Hello, can I help you?','ہیلو، میں مدد کر سکتا ہوں؟'],['B','May I speak to the pharmacist?','کیا میں فارماسسٹ سے بات کر سکتی ہوں؟'],['A','Of course. One moment, please.','جی ضرور، ایک لمحہ رکیے۔'],['B','Thank you.','شکریہ۔']],
+    quiz:{question:'Who can answer questions about a medicine?',options:['The pharmacist','The cashier at a café','The bus driver'],answer:0,why:'You can ask to speak to a pharmacist.'},
+    mission:'Say “May I speak to the pharmacist?” clearly three times.',missionUr:'May I speak to the pharmacist? تین مرتبہ صاف آواز میں بولیں۔',
+    tip:'For medicine or health questions, ask a qualified professional.',tipUr:'دوا یا صحت کے سوالوں کے لیے متعلقہ ماہر سے ضرور پوچھیں۔'
+  },
+  {
+    title:'Week 2 Confidence Review',ur:'دوسرے ہفتے کی دہرائی',focus:'Practise shopping and visiting places',
+    goal:'Combine shop, direction and appointment sentences.',goalUr:'دکان، راستے اور اپائنٹمنٹ والے جملے ایک ساتھ دہرائیں۔',
+    words:[['Receipt','رسید'],['Aisle','قطار'],['Left','بائیں'],['Morning','صبح'],['Help','مدد']],
+    phrases:[['Excuse me, can you help me?','معاف کیجیے، کیا مدد کر سکتے ہیں؟'],['Where can I find milk?','دودھ کہاں ملے گا؟'],['Can I have a receipt?','کیا مجھے رسید مل سکتی ہے؟'],['Is it near here?','کیا یہ قریب ہے؟'],['Please speak slowly.','براہ کرم آہستہ بولیں۔']],
+    dialogue:[['A','Hello! What are you looking for?','ہیلو! آپ کیا ڈھونڈ رہی ہیں؟'],['B','I need the pharmacy.','مجھے فارمیسی جانا ہے۔'],['A','It is near the grocery store.','یہ گروسری اسٹور کے قریب ہے۔'],['B','Thank you very much.','آپ کا بہت شکریہ۔']],
+    quiz:{question:'Which phrase is useful at a shop or clinic?',options:['Excuse me, can you help me?','The moon is blue.','I like dancing kangaroos.'],answer:0,why:'This polite question works in many places.'},
+    mission:'Act out a shop visit with someone at home for two minutes.',missionUr:'گھر میں کسی کے ساتھ دو منٹ کی دکان والی گفتگو کریں۔',
+    tip:'You have already learned useful English for everyday life!',tipUr:'آپ روزمرہ کی بہت کام آنے والی انگریزی سیکھ چکی ہیں!'
+  },
+  {
+    title:'Talking on the Phone',ur:'فون پر بات',focus:'Answer and ask someone to wait',
+    goal:'Use three short phrases during a phone conversation.',goalUr:'فون پر تین آسان جملے بولنا سیکھیں۔',
+    words:[['Calling','فون کرنا'],['Speaking','بات کرنا'],['Hold','انتظار'],['Message','پیغام'],['Later','بعد میں']],
+    phrases:[['Hello, who is speaking?','ہیلو، کون بات کر رہا ہے؟'],['This is _____ speaking.','میں _____ بات کر رہی ہوں۔'],['One moment, please.','ایک لمحہ، براہ کرم۔'],['Can you call back later?','کیا آپ بعد میں فون کر سکتے ہیں؟'],['Can you leave a message?','کیا آپ پیغام چھوڑ سکتے ہیں؟']],
+    dialogue:[['A','Hello, is this Mrs. Khan?','ہیلو، کیا مسز خان بات کر رہی ہیں؟'],['B','Yes, speaking.','جی، میں ہی بات کر رہی ہوں۔'],['A','Is this a good time?','کیا ابھی بات ہو سکتی ہے؟'],['B','One moment, please.','ایک لمحہ، براہ کرم۔']],
+    quiz:{question:'Someone phones while you are busy. Say:',options:['One moment, please.','Where is the milk?','It is snowing.'],answer:0,why:'“One moment” means a short wait.'},
+    mission:'Practise a pretend phone call without looking at the screen.',missionUr:'اسکرین دیکھے بغیر فرضی فون کال کی مشق کریں۔',
+    tip:'On the phone, slower speech is perfectly fine.',tipUr:'فون پر آہستہ بولنے میں کوئی حرج نہیں۔'
+  },
+  {
+    title:'Neighbours & Friendship',ur:'پڑوسیوں سے گفتگو',focus:'Have a warm, short conversation',
+    goal:'Introduce yourself to a neighbour.',goalUr:'پڑوسی سے مختصر اور دوستانہ بات کریں۔',
+    words:[['Neighbour','پڑوسی'],['Nice','اچھا'],['Weekend','ہفتے کی چھٹی'],['Garden','باغ'],['Coffee','کافی']],
+    phrases:[['Hello, I live nearby.','ہیلو، میں قریب رہتی ہوں۔'],['How is your day going?','آپ کا دن کیسا گزر رہا ہے؟'],['It is nice to see you.','آپ کو دیکھ کر خوشی ہوئی۔'],['Have a good weekend!','آپ کی چھٹی اچھی گزرے!'],['See you again.','دوبارہ ملاقات ہوگی۔']],
+    dialogue:[['A','Good morning! How are you?','صبح بخیر! آپ کیسے ہیں؟'],['B','I am good, thank you.','میں ٹھیک ہوں، شکریہ۔'],['A','Have a good weekend!','چھٹی اچھی گزرے!'],['B','You too!','آپ کی بھی!']],
+    quiz:{question:'A neighbour says, “Have a good weekend!”',options:['You too!','Twenty dollars.','I need an appointment.'],answer:0,why:'“You too!” means the same wish back to them.'},
+    mission:'Say a friendly greeting to someone at home as if they were a neighbour.',missionUr:'کسی گھر والے کو پڑوسی سمجھ کر خوش اخلاقی سے انگریزی میں سلام کریں۔',
+    tip:'You do not need long conversations. Two sentences are a success.',tipUr:'لمبی گفتگو ضروری نہیں۔ دو جملے بھی کامیابی ہیں۔'
+  },
+  {
+    title:'School & Community',ur:'اسکول اور کمیونٹی',focus:'Ask questions at a school or community centre',
+    goal:'Ask about a class, meeting or form.',goalUr:'کلاس، میٹنگ یا فارم کے بارے میں پوچھیں۔',
+    words:[['School','اسکول'],['Teacher','استاد'],['Class','کلاس'],['Form','فارم'],['Meeting','ملاقات']],
+    phrases:[['I have a question, please.','مجھے ایک سوال پوچھنا ہے۔'],['Where is the office?','دفتر کہاں ہے؟'],['When does the class start?','کلاس کب شروع ہوتی ہے؟'],['Can you help me with this form?','کیا اس فارم میں مدد کر سکتے ہیں؟'],['I would like to join this class.','میں اس کلاس میں شامل ہونا چاہتی ہوں۔']],
+    dialogue:[['A','Hello! Can I help you?','ہیلو! کیا مدد کر سکتا ہوں؟'],['B','Yes, when does the class start?','جی، کلاس کب شروع ہوتی ہے؟'],['A','It starts at ten.','یہ دس بجے شروع ہوتی ہے۔'],['B','Thank you.','شکریہ۔']],
+    quiz:{question:'You need help filling a form. Say:',options:['Can you help me with this form?','Do you have eggs?','It is snowing.'],answer:0,why:'This sentence asks clearly for form help.'},
+    mission:'Pretend to ask about an English class at a community centre.',missionUr:'کمیونٹی سینٹر میں انگریزی کلاس کے بارے میں فرضی سوال کریں۔',
+    tip:'Ask staff if there are beginner language classes near you.',tipUr:'اسٹاف سے نزدیک ابتدائی انگریزی کلاس کے بارے میں پوچھ سکتی ہیں۔'
+  },
+  {
+    title:'Work & Daily Schedule',ur:'کام اور روزانہ کا وقت',focus:'Explain when you are free or busy',
+    goal:'Talk about work hours and daily plans.',goalUr:'روزمرہ کے کام اور وقت کے بارے میں بات کریں۔',
+    words:[['Work','کام'],['Start','شروع'],['Finish','ختم'],['Busy','مصروف'],['Free','فارغ']],
+    phrases:[['I am busy this morning.','میں آج صبح مصروف ہوں۔'],['I am free in the afternoon.','میں دوپہر میں فارغ ہوں۔'],['What time does it start?','یہ کتنے بجے شروع ہوتا ہے؟'],['I can come tomorrow.','میں کل آ سکتی ہوں۔'],['I need to leave early.','مجھے جلدی جانا ہے۔']],
+    dialogue:[['A','Can you come on Tuesday?','کیا آپ منگل کو آ سکتی ہیں؟'],['B','I am busy on Tuesday.','میں منگل کو مصروف ہوں۔'],['A','What about Wednesday?','بدھ کا کیا خیال ہے؟'],['B','Wednesday is good.','بدھ ٹھیک ہے۔']],
+    quiz:{question:'How do you say you have time tomorrow?',options:['I am free tomorrow.','I am cold tomorrow.','I need a bag.'],answer:0,why:'Free here means available, not busy.'},
+    mission:'Describe tomorrow’s plan in two short English sentences.',missionUr:'کل کے اپنے منصوبے کے بارے میں انگریزی کے دو جملے کہیں۔',
+    tip:'Use “I can” to tell someone what you are able to do.',tipUr:'I can سے آپ بتاتی ہیں کہ آپ کیا کر سکتی ہیں۔'
+  },
+  {
+    title:'Home & Repairs',ur:'گھر کی مرمت اور مدد',focus:'Describe a simple problem at home',
+    goal:'Ask for help with a broken household item.',goalUr:'گھر کی خراب چیز کے لیے مدد مانگیں۔',
+    words:[['Broken','خراب / ٹوٹا ہوا'],['Water','پانی'],['Heat','گرمی / ہیٹر'],['Light','بتی'],['Repair','مرمت']],
+    phrases:[['The washing machine is not working.','واشنگ مشین کام نہیں کر رہی۔'],['There is no hot water.','گرم پانی نہیں آ رہا۔'],['The light is broken.','بتی خراب ہے۔'],['Can someone please check it?','کیا کوئی اسے چیک کر سکتا ہے؟'],['When can it be repaired?','یہ کب ٹھیک ہو سکتا ہے؟']],
+    dialogue:[['A','Hello, what is the problem?','ہیلو، کیا مسئلہ ہے؟'],['B','The washing machine is not working.','واشنگ مشین نہیں چل رہی۔'],['A','Can someone come tomorrow?','کیا کوئی کل آ سکتا ہے؟'],['B','Yes, please. Thank you.','جی ہاں، براہ کرم۔ شکریہ۔']],
+    quiz:{question:'Your washer has stopped working. Say:',options:['The washing machine is not working.','I have two bags.','I am learning numbers.'],answer:0,why:'This explains the problem clearly.'},
+    mission:'Choose one item at home and practise describing a pretend problem.',missionUr:'گھر کی ایک چیز چن کر فرضی خرابی بیان کریں۔',
+    tip:'Simple descriptions are enough to start asking for help.',tipUr:'مدد مانگنے کے لیے ایک سادہ جملہ کافی ہو سکتا ہے۔'
+  },
+  {
+    title:'When You Feel Confused',ur:'جب بات سمجھ نہ آئے',focus:'Stay confident and ask for clarification',
+    goal:'Keep a conversation going even when you forget a word.',goalUr:'لفظ بھولنے پر بھی بات جاری رکھنا سیکھیں۔',
+    words:[['Repeat','دہرانا'],['Explain','سمجھانا'],['Write','لکھنا'],['Show','دکھانا'],['Mean','مطلب']],
+    phrases:[['What does that mean?','اس کا کیا مطلب ہے؟'],['Could you explain it simply?','کیا آپ آسان الفاظ میں سمجھا سکتے ہیں؟'],['Can you write it down?','کیا آپ اسے لکھ سکتے ہیں؟'],['Can you show me, please?','کیا آپ مجھے دکھا سکتے ہیں؟'],['Let me try again.','مجھے دوبارہ کوشش کرنے دیں۔']],
+    dialogue:[['A','Please complete this application.','براہ کرم یہ درخواست مکمل کریں۔'],['B','What does that mean?','اس کا کیا مطلب ہے؟'],['A','Please fill in this form.','براہ کرم یہ فارم بھریں۔'],['B','Okay. Can you help me?','ٹھیک ہے۔ کیا آپ مدد کر سکتے ہیں؟']],
+    quiz:{question:'You want someone to write information. Say:',options:['Can you write it down?','Where are the eggs?','Stay warm!'],answer:0,why:'“Write it down” means put it on paper or a screen.'},
+    mission:'Say “Let me try again” with a confident voice three times.',missionUr:'Let me try again پراعتماد لہجے میں تین بار بولیں۔',
+    tip:'Asking questions shows confidence and helps you learn.',tipUr:'سوال پوچھنا اعتماد کی نشانی ہے اور سیکھنے میں مدد دیتا ہے۔'
+  },
+  {
+    title:'Your Real-Life English Day',ur:'آپ کی آخری مشق',focus:'Speak with confidence in everyday situations',
+    goal:'Complete three mini-conversations by yourself.',goalUr:'خود سے تین چھوٹی گفتگو مکمل کریں۔',
+    words:[['Confident','پراعتماد'],['Practise','مشق'],['Learn','سیکھنا'],['Speak','بولنا'],['Proud','فخر']],
+    phrases:[['Hello, how are you today?','ہیلو، آج آپ کیسے ہیں؟'],['Excuse me, could you help me?','معاف کیجیے، کیا مدد کر سکتے ہیں؟'],['I am still learning English.','میں ابھی انگریزی سیکھ رہی ہوں۔'],['Please speak a little slowly.','براہ کرم ذرا آہستہ بولیں۔'],['Thank you. Have a lovely day!','شکریہ۔ آپ کا دن اچھا گزرے!']],
+    dialogue:[['A','Hi! Can I help you?','ہیلو! کیا مدد کر سکتا ہوں؟'],['B','Yes. I am looking for the pharmacy.','جی، میں فارمیسی ڈھونڈ رہی ہوں۔'],['A','It is just around the corner.','یہ کونے کے بعد ہی ہے۔'],['B','Thank you. Have a lovely day!','شکریہ۔ آپ کا دن اچھا گزرے!']],
+    quiz:{question:'The most important thing when learning to speak is:',options:['Never make mistakes','Practise a little every day','Only study grammar'],answer:1,why:'Small, frequent speaking practice builds confidence.'},
+    mission:'Speak for one full minute: introduce yourself, ask for help and say thank you.',missionUr:'پورا ایک منٹ بولیں: تعارف، مدد کا سوال اور شکریہ۔',
+    tip:'You finished 21 days! Keep using one new sentence in real life each day.',tipUr:'آپ نے ۲۱ دن مکمل کیے! روز زندگی میں ایک نیا جملہ بولتی رہیں۔'
+  }
+];
+
+const STORE_KEY = 'english-with-ammi-v1';
+const DEFAULT_STATE = {done:{},quiz:{},practised:{},lastDay:0,font:1.06,slow:true};
+let saved={};
+try { saved=JSON.parse(localStorage.getItem(STORE_KEY)||'{}')||{}; } catch(e) { saved={}; }
+const state={...DEFAULT_STATE,...saved,done:saved.done||{},quiz:saved.quiz||{},practised:saved.practised||{}};
+state.lastDay=Math.max(0,Math.min(LESSONS.length-1,Number(state.lastDay)||0));
+state.font=Math.max(0.95,Math.min(1.4,Number(state.font)||1));
+let tab='learn', wrongAnswer=-1, recorder=null, recStream=null, recUrl=null, noticeTimeout=null;
+const app=document.getElementById('app');
+const save=()=>{try{localStorage.setItem(STORE_KEY,JSON.stringify(state));}catch(e){/* browser storage may be off */}};
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ur=s=>`<span class="ur" lang="ur" dir="rtl">${esc(s)}</span>`;
+const doneCount=()=>Object.values(state.done).filter(Boolean).length;
+const completed=n=>!!state.done[n];
+const current=()=>LESSONS[state.lastDay];
+function notice(message){
+  const el=document.getElementById('toast');el.textContent=message;el.hidden=false;
+  clearTimeout(noticeTimeout);noticeTimeout=setTimeout(()=>el.hidden=true,3900);
+}
+function topUi(){
+ const count=doneCount(), percent=Math.round(count/LESSONS.length*100);
+ return `<header class="header"><div class="logo"><span class="logo-mark" aria-hidden="true">✿</span><span>English With Ammi</span></div><div class="control-row"><span class="top-chip">21 easy days · Free</span><div class="font-control" aria-label="Text size"><button data-action="small-text" aria-label="Make text smaller">A−</button><button data-action="big-text" aria-label="Make text larger">A+</button></div></div></header>
+ <section class="hero" aria-label="Course welcome"><div><div class="eyebrow">An everyday English course</div><h1>Every word is<br>a little victory.</h1><p>Listen, repeat and practise real conversations. Just 15 minutes a day, at your own pace.</p><div class="ur" lang="ur" dir="rtl">امی جان، گھبرانا نہیں۔ روز تھوڑی سی انگریزی بولیں، آپ ضرور بہتر ہوں گی۔</div></div><div class="hero-right"><div class="hero-note"><div class="small-label">Your learning journey</div><div class="big-number">${count}<span style="font-size:1.25rem;color:#80a28d"> / 21</span></div><b>Days completed</b><div class="prog-track" role="progressbar" aria-valuenow="${count}" aria-valuemin="0" aria-valuemax="21" aria-label="Course progress"><div class="prog-fill" style="width:${percent}%"></div></div><small>${percent}% finished · Progress stays on this device</small></div></div></section>
+ <nav class="navtabs" aria-label="Course navigation"><button class="navtab ${tab==='learn'?'active':''}" data-action="nav-learn" aria-current="${tab==='learn'?'page':'false'}">📖 My lesson</button><button class="navtab ${tab==='all'?'active':''}" data-action="nav-all" aria-current="${tab==='all'?'page':'false'}">📅 All 21 days</button><button class="navtab ${tab==='book'?'active':''}" data-action="nav-book" aria-current="${tab==='book'?'page':'false'}">💬 Phrasebook</button></nav>`;
+}
+function sidebar(){
+ let html='<aside class="side" aria-label="Choose a day"><div class="side-title">Choose your lesson</div>';
+ for(let i=0;i<LESSONS.length;i++){
+  if(i%7===0) html+=`<div class="week-label">Week ${Math.floor(i/7)+1}</div>`;
+  html+=`<button class="day-btn ${i===state.lastDay?'active':''} ${completed(i)?'done':''}" data-action="select-day" data-day="${i}" ${i===state.lastDay?'aria-current="step"':''}><span class="day-num">${completed(i)?'✓':i+1}</span><span class="day-text">${esc(LESSONS[i].title)}</span>${completed(i)?'<span class="day-status" aria-label="completed">✓</span>':''}</button>`;
+ }
+ return html+'</aside>';
+}
+function mobileDay(){return `<label class="mobile-day"><span class="small-label" style="display:block">Choose a day · سبق منتخب کریں</span><select id="mobile-select" aria-label="Choose a lesson">${LESSONS.map((l,i)=>`<option value="${i}" ${i===state.lastDay?'selected':''}>Day ${i+1} ${completed(i)?'✓':''} — ${esc(l.title)}</option>`).join('')}</select></label>`;}
+function phraseRows(l){
+ return l.phrases.map(([english,translation],i)=>`<div class="phrase"><div><div class="english">${esc(english)}</div><div class="translation">${ur(translation)}</div></div><button class="audio-btn" data-action="play-phrase" data-index="${i}" aria-label="Listen: ${esc(english)}"><span class="audio-icon">▶</span> Listen</button></div>`).join('');
+}
+function dialogue(l){
+ return l.dialogue.map(([who,en,translation])=>`<div class="bubble ${who.toLowerCase()}"><div class="who">Person ${esc(who)}</div><div class="english">${esc(en)}</div><div>${ur(translation)}</div></div>`).join('');
+}
+function quizBlock(l,i){
+ let feedback='';
+ if(state.quiz[i]) feedback=`<div class="feedback good" role="status">✓ Correct! ${esc(l.quiz.why)} <span class="ur" lang="ur" dir="rtl">شاباش!</span></div>`;
+ else if(wrongAnswer>=0) feedback='<div class="feedback try" role="status">Not quite. That is okay! Try another answer. · کوئی بات نہیں، دوبارہ کوشش کریں۔</div>';
+ return `<h2 class="section-title">4. A tiny practice question</h2><p class="section-sub">Choose one answer. No pressure!</p><p style="font-weight:800;margin:12px 0">${esc(l.quiz.question)}</p><div class="quiz-options">${l.quiz.options.map((opt,n)=>`<button data-action="quiz" data-answer="${n}" class="quiz-option ${(state.quiz[i]&&n===l.quiz.answer)?'correct':(wrongAnswer===n?'wrong':'')}" ${state.quiz[i]?'disabled':''}><span class="option-dot">${'ABC'[n]}</span>${esc(opt)}</button>`).join('')}</div>${feedback}`;
+}
+function lesson(){
+ const l=current(),i=state.lastDay,done=completed(i),allSet=state.quiz[i]&&state.practised[i];
+ return `${mobileDay()}<div id="lesson-start" class="panel"><div class="lesson-top"><div><div class="small-label">Week ${Math.floor(i/7)+1} · Day ${i+1} of 21</div><h2 class="lesson-title">${esc(l.title)}</h2><div class="lesson-title-ur">${ur(l.ur)}</div></div><span class="badge">${done?'✓ Completed':'15-minute lesson'}</span></div><p class="intro">${esc(l.focus)}</p><div class="goal-box"><strong>Today's goal:</strong> ${esc(l.goal)}<p>${ur(l.goalUr)}</p></div></div>
+ <div class="panel"><h2 class="section-title">1. Five useful words</h2><p class="section-sub">Tap the English word to hear it. · <span class="ur" lang="ur" dir="rtl">لفظ کو دبا کر سنیں</span></p><div class="word-list">${l.words.map(([en,translation],n)=>`<div class="word"><button data-action="play-word" data-index="${n}" aria-label="Listen to ${esc(en)}">▶ ${esc(en)}</button>${ur(translation)}</div>`).join('')}</div></div>
+ <div class="panel"><div class="section-head"><div><h2 class="section-title">2. Listen & say it</h2><p class="section-sub">Tap Listen, then repeat it out loud. Each sentence can be replayed.</p></div><label class="toggleline"><input id="slow-voice" type="checkbox" ${state.slow?'checked':''}> Speak slowly</label></div>${phraseRows(l)}<div style="margin-top:17px;padding:13px;border-radius:12px;background:#f8faf7;color:#567065;font-size:.87rem"><strong>Helpful tip:</strong> ${esc(l.tip)}<div>${ur(l.tipUr)}</div></div></div>
+ <div class="panel"><h2 class="section-title">3. Practise a conversation</h2><p class="section-sub">Listen first. Then play both parts out loud yourself!</p><div class="talk">${dialogue(l)}</div><div class="listening-tools"><button class="soft-btn" data-action="play-conversation">▶ Hear the whole conversation</button><button class="soft-btn" data-action="stop-audio">■ Stop sound</button></div></div>
+ <div class="panel">${quizBlock(l,i)}</div>
+ <div class="panel"><h2 class="section-title">5. Your confidence mission</h2><p class="section-sub">The most important part: speak without worrying about mistakes.</p><div class="mission"><p>⭐ ${esc(l.mission)}</p><div>${ur(l.missionUr)}</div></div><label class="big-check"><input type="checkbox" id="practised" ${state.practised[i]?'checked':''}><span>I practised speaking aloud! <span class="ur" lang="ur" dir="rtl">میں نے بول کر مشق کی</span></span></label><div style="margin-top:20px"><strong>Optional: record and hear your own voice</strong><div class="record-tools"><button class="soft-btn" data-action="record">● Start recording</button><button class="soft-btn" data-action="stop-record">■ Stop</button></div><p class="record-note">Your recording stays on your device and disappears when you leave or reload this page. Microphone permission is optional.</p><div id="record-status" class="tiny" role="status" aria-live="polite"></div><div id="record-container"></div></div></div>
+ <div class="panel">${done?'<div class="complete-banner">✓ Well done! You finished this day. Come back anytime to practise again.<div class="ur" lang="ur" dir="rtl">شاباش! آج کا سبق مکمل ہو گیا۔</div></div>':''}<div class="next-row"><div><div style="font-weight:850">${done?'Your progress is saved':'Ready to finish?'}</div><div class="tiny">${allSet?'Great! Your question and speaking practice are done.':'Answer the question and tick your speaking practice above.'}</div></div>${done?`<button class="primary" data-action="next-day">${i===LESSONS.length-1?'Back to Day 1':'Next day →'}</button>`:`<button class="primary" data-action="finish-day" ${!allSet?'disabled':''}>✓ Finish Day ${i+1}</button>`}</div></div>`;
+}
+function allDays(){return `<section class="panel"><div class="small-label">Your own pace</div><h2 class="lesson-title">All 21 days</h2><p class="intro">Pick any lesson. There are no locked days and no exams. Repeat as often as you like.</p><p>${ur('ہر سبق جب چاہیں دوبارہ پڑھیں۔ کوئی جلدی نہیں۔')}</p></section><div class="all-days">${LESSONS.map((l,i)=>`<button class="day-card" data-action="select-day" data-day="${i}"><span class="pill">Day ${i+1} · Week ${Math.floor(i/7)+1} ${completed(i)?' · ✓ Done':''}</span><strong style="font-size:1.06rem">${esc(l.title)}</strong>${ur(l.ur)}<span style="font-size:.86rem;color:#75897d">${esc(l.focus)}</span></button>`).join('')}</div>`;}
+function phrasebookGroups(query=''){
+ const q=query.trim().toLowerCase(),groups=[];
+ LESSONS.forEach((l,i)=>{
+  const rows=l.phrases.map(([en,translation],p)=>({en,translation,p})).filter(p=>!q||`${p.en} ${p.translation} ${l.title}`.toLowerCase().includes(q));
+  if(rows.length) groups.push(`<section class="phrasebook-group"><h3>Day ${i+1}: ${esc(l.title)}</h3>${rows.map(({en,translation,p})=>`<div class="book-row"><div><div class="english">${esc(en)}</div><div class="translation">${ur(translation)}</div></div><button class="audio-btn" data-action="play-book" data-day="${i}" data-index="${p}" aria-label="Listen: ${esc(en)}">▶ Listen</button></div>`).join('')}</section>`);
+ });
+ return groups.join('')||'<div class="empty">No phrases found. Try a simpler word. · کوئی دوسرا لفظ تلاش کریں۔</div>';
+}
+function book(){return `<section class="panel"><div class="small-label">Words you can use today</div><h2 class="lesson-title">Everyday phrasebook</h2><p class="intro">Find a sentence, hear it, and try saying it out loud. All ${LESSONS.reduce((n,l)=>n+l.phrases.length,0)} sentences are here.</p><p>${ur('روزمرہ کے جملے تلاش کریں، سنیں، اور خود بولیں۔')}</p><label for="phrase-search" class="small-label" style="display:block;margin-top:18px">Search English or Urdu</label><input class="searchbar" id="phrase-search" type="search" placeholder="Try: help, price, appointment, شکریہ" autocomplete="off"><div id="phrase-results">${phrasebookGroups()}</div></section>`;}
+function render(){
+ document.documentElement.style.setProperty('--font-scale',state.font);
+ app.innerHTML=topUi()+(tab==='learn'?`<div class="layout">${sidebar()}<main class="content">${lesson()}</main></div>`:`<main class="content">${tab==='all'?allDays():book()}</main>`)+`<footer class="footer">Made with care for English learners · English + اردو · No account, ads or fees · Progress stays in this browser</footer>`;
+}
+function cancelSpeech(){if('speechSynthesis' in window){speechSynthesis.cancel();}}
+let playingAudio=false;
+function chooseVoice(){
+ if(!('speechSynthesis' in window))return null;
+ const v=speechSynthesis.getVoices();
+ return v.find(x=>x.lang.toLowerCase()==='en-ca')||v.find(x=>x.lang.toLowerCase()==='en-us')||v.find(x=>x.lang.toLowerCase().startsWith('en-'))||null;
+}
+function speak(text,finished){
+ if(!('speechSynthesis' in window)){notice('Audio is not supported by this browser. You can still read and practise.');return;}
+ const utter=new SpeechSynthesisUtterance(text.replace(/_____+/g,'Amina'));
+ utter.lang='en-CA';utter.rate=state.slow?.78:.96;utter.pitch=1;utter.volume=1;
+ const voice=chooseVoice();if(voice)utter.voice=voice;
+ utter.onend=()=>{if(finished)finished();};utter.onerror=()=>{if(finished)finished();};
+ speechSynthesis.speak(utter);
+}
+function speakOne(text){cancelSpeech();speak(text);}
+function speakConversation(lines){
+ cancelSpeech();playingAudio=true;let n=0;
+ const next=()=>{
+  if(!playingAudio||n>=lines.length){playingAudio=false;return;}
+  const en=lines[n++][1];
+  speak(en,()=>{if(playingAudio) setTimeout(next,350);});
+ };next();
+}
+function stopSpeaking(){playingAudio=false;cancelSpeech();}
+function clearRecording(){
+ if(recorder&&recorder.state==='recording'){try{recorder.stop();}catch(e){}}
+ if(recStream){recStream.getTracks().forEach(t=>t.stop());recStream=null;}
+ if(recUrl){URL.revokeObjectURL(recUrl);recUrl=null;}
+ recorder=null;
+}
+async function startRecording(){
+ if(!navigator.mediaDevices||!navigator.mediaDevices.getUserMedia||!window.MediaRecorder){notice('Recording is unavailable here. Just speak aloud instead!');return;}
+ clearRecording();
+ const el=document.getElementById('record-status');
+ if(el)el.textContent='Asking for microphone permission…';
+ try{
+   recStream=await navigator.mediaDevices.getUserMedia({audio:true});
+   const chunks=[];recorder=new MediaRecorder(recStream);
+   recorder.ondataavailable=e=>{if(e.data&&e.data.size)chunks.push(e.data);};
+   const thisRecorder=recorder;
+   recorder.onstop=()=>{
+    if(!chunks.length)return;
+    const blob=new Blob(chunks,{type:thisRecorder.mimeType||'audio/webm'});
+    recUrl=URL.createObjectURL(blob);
+    const target=document.getElementById('record-container');
+    if(target)target.innerHTML=`<audio controls class="record-playback" src="${recUrl}" aria-label="Play back your recording"></audio>`;
+    if(el)el.textContent='Recording ready. Press play to hear yourself!';
+   };
+   recorder.start();if(el)el.textContent='● Recording... speak in your normal voice, then tap Stop.';
+ }catch(e){
+   if(recStream){recStream.getTracks().forEach(t=>t.stop());recStream=null;}
+   if(el)el.textContent='Microphone is off or unavailable. You can practise without recording.';
+ }
+}
+function stopRecording(){
+ if(recorder&&recorder.state==='recording')recorder.stop();
+ if(recStream){recStream.getTracks().forEach(t=>t.stop());recStream=null;}
+}
+function gotoDay(n){
+ stopSpeaking();clearRecording();wrongAnswer=-1;
+ state.lastDay=Math.max(0,Math.min(LESSONS.length-1,n));tab='learn';save();render();
+ document.getElementById('lesson-start')?.scrollIntoView({behavior:'smooth',block:'start'});
+}
+app.addEventListener('click',e=>{
+ const btn=e.target.closest('button[data-action]');if(!btn)return;
+ const action=btn.dataset.action;const index=Number(btn.dataset.index||0);
+ if(action==='small-text'||action==='big-text'){state.font=Math.max(.95,Math.min(1.4,Math.round((state.font+(action==='big-text'?.1:-.1))*100)/100));save();render();return;}
+ if(action==='nav-learn'||action==='nav-all'||action==='nav-book'){stopSpeaking();clearRecording();wrongAnswer=-1;tab=action.split('-')[1]==='book'?'book':action.split('-')[1];render();return;}
+ if(action==='select-day'){gotoDay(Number(btn.dataset.day));return;}
+ if(action==='play-word'){speakOne(current().words[index][0]);return;}
+ if(action==='play-phrase'){speakOne(current().phrases[index][0]);return;}
+ if(action==='play-book'){speakOne(LESSONS[Number(btn.dataset.day)].phrases[index][0]);return;}
+ if(action==='play-conversation'){speakConversation(current().dialogue);return;}
+ if(action==='stop-audio'){stopSpeaking();return;}
+ if(action==='quiz'){
+  const answer=Number(btn.dataset.answer),i=state.lastDay;
+  if(answer===current().quiz.answer){state.quiz[i]=true;wrongAnswer=-1;save();}else wrongAnswer=answer;
+  render();return;
+ }
+ if(action==='finish-day'){
+  const i=state.lastDay;if(state.quiz[i]&&state.practised[i]){state.done[i]=true;save();render();notice('Wonderful work! Day '+(i+1)+' is complete.');}
+  return;
+ }
+ if(action==='next-day'){gotoDay(state.lastDay===LESSONS.length-1?0:state.lastDay+1);return;}
+ if(action==='record'){startRecording();return;}
+ if(action==='stop-record'){stopRecording();return;}
+});
+app.addEventListener('change',e=>{
+ if(e.target.id==='mobile-select'){gotoDay(Number(e.target.value));return;}
+ if(e.target.id==='slow-voice'){state.slow=e.target.checked;save();return;}
+ if(e.target.id==='practised'){state.practised[state.lastDay]=e.target.checked;save();render();return;}
+});
+app.addEventListener('input',e=>{if(e.target.id==='phrase-search'){document.getElementById('phrase-results').innerHTML=phrasebookGroups(e.target.value);}});
+window.addEventListener('beforeunload',()=>{stopSpeaking();clearRecording();});
+render();
+
+</script>
+</body>
+</html>
