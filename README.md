@@ -1,5 +1,21 @@
 # English With Ammi
 
+## Tech With Ammi: digital confidence course
+
+A second free course is now hosted in this same repository:
+
+- **Website:** [Tech With Ammi](https://aimiahmed2829.github.io/english-with-ammi/tech.html)
+- **Course page:** `tech.html`; course content: `tech-lessons.js`
+- **30 lessons / 60 scenario-based quiz questions** with four plausible choices and feedback.
+- Topics: smartphone touch gestures, Wi-Fi, apps and privacy, tablets, accessibility, laptop basics, keyboards, folders, web browsing, email and attachments, safe account recovery, phishing prevention, online shopping, RAM/ROM/CPU/GPU/SSD/HDD/motherboards and troubleshooting.
+- Hand-picked YouTube tutorials play **embedded on the course page** when the learner taps Watch here (YouTube and the creator control embedding and external links, and some videos may not play in every browser).
+- English explanations plus Urdu descriptions and hands-on activities for every lesson.
+- Separate progress tracking saved only in that browser using localStorage. No backend, registration or personal data collection.
+- For forgotten passwords, the guide points to **official Google, Apple and Microsoft recovery pages**. It never asks for passwords or one-time codes.
+
+The original 21-day English speaking course at `index.html` is unchanged apart from a navigation link to this new course.
+
+
 A free, friendly, phone-first English speaking crash course for an adult Urdu-speaking beginner living in Canada.
 
 **The actual website is the single file `index.html`.** No coding knowledge, apps, login, database, API key, or subscription is required.
