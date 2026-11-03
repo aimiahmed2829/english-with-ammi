@@ -170,6 +170,13 @@ function hardware(i){
  if(i<22||i>28)return '';
  return '<div class="hardware-graphic" aria-label="Computer parts diagram"><div><strong>CPU</strong><span>Processes instructions</span></div><div><strong>RAM</strong><span>Temporary working space</span></div><div><strong>SSD / HDD</strong><span>Keeps saved files</span></div><div><strong>Motherboard</strong><span>Connects the parts</span></div></div>';
 }
+function recoveryGuides(){
+ return '<section class="panel"><h3>Official password recovery · پاس ورڈ دوبارہ حاصل کریں</h3><p class="helper">Only use the real provider’s recovery page. Never enter a code or password on a page someone sent unexpectedly. Never give recovery codes to another person.</p><div class="points">'+
+ '<div class="point"><strong>Gmail / Google Account</strong><p>1. Open the official Google recovery page. 2. Enter your email address. 3. Follow Google’s identity checks. 4. Make a new unique password if prompted.</p><p class="ur" lang="ur">اصل گوگل ریکوری صفحہ کھولیں، اپنا ای میل دیں اور تصدیق کے مراحل مکمل کریں۔</p><a href="https://accounts.google.com/signin/recovery" target="_blank" rel="noopener noreferrer">Official Google recovery →</a></div>'+
+ '<div class="point"><strong>Apple Account (iPhone / iPad)</strong><p>1. Start at Apple’s official password recovery website or device Settings. 2. Follow the instructions for your account and trusted devices. 3. If needed, begin Apple’s account recovery process.</p><p class="ur" lang="ur">ایپل کی اصل ویب سائٹ یا فون کی سیٹنگز استعمال کریں۔</p><a href="https://iforgot.apple.com/" target="_blank" rel="noopener noreferrer">Official Apple password help →</a></div>'+
+ '<div class="point"><strong>Microsoft / Outlook</strong><p>1. At the Microsoft account sign-in screen, choose Forgot password. 2. Verify using an approved method. 3. Set a new password when allowed.</p><p class="ur" lang="ur">مائیکروسافٹ کی اصل لاگ اِن اسکرین پر Forgot password دبائیں۔</p><a href="https://account.live.com/password/reset" target="_blank" rel="noopener noreferrer">Official Microsoft password help →</a></div>'+
+ '</div><div class="feature"><strong>Important:</strong> A forgotten phone screen-lock PIN is a different issue from a forgotten Google/Apple/Microsoft account password. Do not factory reset the device casually—files may be lost.</div></section>';
+}
 function mission(l){
  return '<section class="panel"><h3>3. Practise it yourself · خود مشق کریں</h3><div class="action-card"><strong>'+enc(l.task)+'</strong><p class="ur" lang="ur">'+enc(l.taskUr)+'</p><label><input type="checkbox" id="practice" '+(s.practice[s.day]?'checked':'')+'><span>I tried this task · میں نے مشق کی</span></label></div></section>';
 }
@@ -201,7 +208,7 @@ function render(){
  if(!lessons.length){el('content').innerHTML='<section class="panel">The lessons could not load. Check your internet and refresh.</section>';return}
  progress();nav();
  var l=lessons[s.day];
- el('content').innerHTML='<section class="panel" id="start"><div class="lesson-head"><div><div class="kicker">Day '+(s.day+1)+' of '+lessons.length+'</div><h2>'+enc(l.t)+'</h2><p class="ur" lang="ur">'+enc(l.u)+'</p></div><span class="pill">'+(s.done[s.day]?'✓ Completed':'About 15–20 minutes')+'</span></div><div class="feature"><strong>Today’s goal: </strong>'+enc(l.g)+'</div>'+hardware(s.day)+'</section>'+knowledge(l)+video(l)+mission(l)+quizzes(l)+(s.day>=22?glossary():'');
+ el('content').innerHTML='<section class="panel" id="start"><div class="lesson-head"><div><div class="kicker">Day '+(s.day+1)+' of '+lessons.length+'</div><h2>'+enc(l.t)+'</h2><p class="ur" lang="ur">'+enc(l.u)+'</p></div><span class="pill">'+(s.done[s.day]?'✓ Completed':'About 15–20 minutes')+'</span></div><div class="feature"><strong>Today’s goal: </strong>'+enc(l.g)+'</div>'+hardware(s.day)+'</section>'+knowledge(l)+(s.day===14?recoveryGuides():'')+video(l)+mission(l)+quizzes(l)+(s.day>=22?glossary():'');
 }
 function goto(i){s.day=Math.min(lessons.length-1,Math.max(0,i));viewedVideo=false;save();render();el('start').scrollIntoView({behavior:'smooth',block:'start'});}
 document.addEventListener('click',function(e){
