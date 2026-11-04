@@ -6,12 +6,12 @@ A second free course is now hosted in this same repository:
 
 - **Website:** [Tech With Ammi](https://aimiahmed2829.github.io/english-with-ammi/tech.html)
 - **Course page:** `tech.html`; course content: `tech-lessons.js`
-- **30 lessons / 60 scenario-based quiz questions** with four plausible choices and feedback.
-- Topics: smartphone touch gestures, Wi-Fi, apps and privacy, tablets, accessibility, laptop basics, keyboards, folders, web browsing, email and attachments, safe account recovery, phishing prevention, online shopping, RAM/ROM/CPU/GPU/SSD/HDD/motherboards and troubleshooting.
+- **30 lessons / 77 scenario-based quiz questions** with four plausible choices and feedback.
+- Topics: Android storage and permissions, Wi-Fi troubleshooting, scanning documents into PDFs, file transfers, Windows File Explorer and shortcuts, Gmail and attachments, safe account recovery, scams and online safety, RAM/ROM/CPU/GPU/SSD/HDD/motherboards and troubleshooting.
 - Hand-picked YouTube tutorials play **embedded on the course page** when the learner taps Watch here (YouTube and the creator control embedding and external links, and some videos may not play in every browser).
 - English explanations plus Urdu descriptions and hands-on activities for every lesson.
 - Separate progress tracking saved only in that browser using localStorage. No backend, registration or personal data collection.
-- For forgotten passwords, the guide points to **official Google, Apple and Microsoft recovery pages**. It never asks for passwords or one-time codes.
+- For forgotten passwords, the guide points to **official Google and Microsoft recovery pages**. It never asks for passwords or one-time codes.
 
 The original 21-day English speaking course at `index.html` is unchanged apart from a navigation link to this new course.
 
@@ -55,13 +55,13 @@ The website becomes a shareable web link after you publish it. It has **not** be
    `https://aimiahmed2829.github.io/english-with-ammi/`
 
    **This is the expected URL pattern, not a confirmation that the website is live.** Use the actual URL shown by GitHub Pages when deployment succeeds.
-7. Send that link to Ammi in WhatsApp or another messaging app. She can bookmark it or add it to her iPhone Home Screen.
+7. Send that link to Ammi in WhatsApp or another messaging app. She can bookmark it or add it to her Android Home Screen.
 
 **Shortcut:** If you create the empty public GitHub repository and share its repository URL back in ChatGPT, the already-connected GitHub app can add the course file for you.
 
 ## Browser notes
 
-- **Listen** uses the phone or computer's built-in English text-to-speech voices. Voice and pronunciation quality vary by device and browser; Safari on iPhone and Chrome on Android are good choices to try.
+- **Listen** uses the phone or computer's built-in English text-to-speech voices. Voice and pronunciation quality vary by device and browser; Chrome on Android is a good choice to try.
 - Microphone recording is optional, requests permission, and is kept in browser memory only. It is not sent to a server and disappears on refresh or when leaving.
 - The progress record is saved in local browser storage, **not to GitHub or an online account**. It will not automatically sync between phones and can be lost if she clears website data or uses private browsing.
 - No internet connection to a third-party content service is used by the course; while the online site needs access to be opened, the content itself is self-contained.
