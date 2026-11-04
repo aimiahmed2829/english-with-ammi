@@ -115,20 +115,20 @@ summary{font-weight:800;cursor:pointer}
  <div class="top-actions"><a href="index.html">← English With Ammi</a><div class="text-size" aria-label="Text size"><button type="button" id="smaller" aria-label="Make text smaller">A−</button><button type="button" id="larger" aria-label="Make text larger">A+</button></div></div>
 </header>
 <section class="hero">
- <div><p class="tag">30-day digital confidence course</p><h1>Technology gets easier<br>one step at a time.</h1><p>Learn phones, tablets, laptops, email, safety and computer parts with Urdu explanations. Try it yourself, then take a clever little quiz.</p><p class="ur" lang="ur">امی جان، ہر روز تھوڑی سی مشق کریں۔ غلطی ہو جائے تو کوئی بات نہیں۔ آپ آرام سے سیکھ سکتی ہیں۔</p></div>
+ <div><p class="tag">30 useful lessons · Android & Windows</p><h1>Get more done<br>with your devices.</h1><p>Already comfortable using a phone? Go further: manage files and PDFs, send professional emails, recover accounts, solve common problems, and understand computer hardware.</p><p class="ur" lang="ur">امی جان، فون تو آپ پہلے ہی استعمال کرتی ہیں۔ اب نئی تکنیکی مہارتیں، ای میل، فائلیں اور کمپیوٹر کا مزید علم حاصل کریں۔</p></div>
  <div class="progress-card" id="progress"><strong>0 / 30</strong><div>Lessons completed</div><div class="track"><div class="fill"></div></div><div class="fine">Progress is saved on this device</div></div>
 </section>
-<div class="infobar"><span class="chip">📱 Phone & tablet</span><span class="chip">✉️ Email & passwords</span><span class="chip">🛡️ Online safety</span><span class="chip">💻 RAM, ROM, CPU & more</span><span class="chip">🧩 60 thoughtful questions</span></div>
-<div class="mobile-switch"><label for="choose">Choose your lesson · اپنا سبق چنیں</label><select id="choose"></select></div>
+<div class="infobar"><span class="chip">📱 Android phone skills</span><span class="chip">✉️ Email & passwords</span><span class="chip">🛡️ Online safety</span><span class="chip">💻 RAM, ROM, CPU & more</span><span class="chip">🧩 77 scenario questions</span></div>
+<div class="mobile-switch"><label for="choose">Select a practical lesson · سبق منتخب کریں</label><select id="choose"></select></div>
 <div class="layout"><aside class="side" id="day-list" aria-label="Lessons"></aside><main class="content" id="content"></main></div>
-<footer class="foot">Made for Ammi with care · English + اردو · Free · No account needed · Videos are provided by their original YouTube creators</footer>
+<footer class="foot">Practical digital skills for adults · English + اردو · No account needed · Videos remain on this page when YouTube allows playback</footer>
 </div>
 <script src="tech-lessons.js"></script>
 <script>
 (function(){
 'use strict';
 var lessons=window.TECH_LESSONS||[];
-var groupNames=['Phone & tablet','Computer & email','Safety & everyday skills','Computer hardware'];
+var groupNames=['Android: everyday tasks','Windows, files & email','Accounts & online safety','Computer hardware'];
 var groups=[[0,6],[7,13],[14,21],[22,29]];
 var key='englishWithAmmiTechV1';
 function readState(){try{var v=JSON.parse(localStorage.getItem(key));if(v&&typeof v==='object')return v}catch(e){}return {}}
@@ -171,17 +171,16 @@ function hardware(i){
  return '<div class="hardware-graphic" aria-label="Computer parts diagram"><div><strong>CPU</strong><span>Processes instructions</span></div><div><strong>RAM</strong><span>Temporary working space</span></div><div><strong>SSD / HDD</strong><span>Keeps saved files</span></div><div><strong>Motherboard</strong><span>Connects the parts</span></div></div>';
 }
 function recoveryGuides(){
- return '<section class="panel"><h3>Official password recovery · پاس ورڈ دوبارہ حاصل کریں</h3><p class="helper">Only use the real provider’s recovery page. Never enter a code or password on a page someone sent unexpectedly. Never give recovery codes to another person.</p><div class="points">'+
+ return '<section class="panel"><h3>Official password recovery · پاس ورڈ دوبارہ حاصل کریں</h3><p class="helper">Use the official provider’s recovery page. Never enter a code or password on a page someone sent unexpectedly. Never give recovery codes to another person.</p><div class="points">'+
  '<div class="point"><strong>Gmail / Google Account</strong><p>1. Open the official Google recovery page. 2. Enter your email address. 3. Follow Google’s identity checks. 4. Make a new unique password if prompted.</p><p class="ur" lang="ur">اصل گوگل ریکوری صفحہ کھولیں، اپنا ای میل دیں اور تصدیق کے مراحل مکمل کریں۔</p><a href="https://accounts.google.com/signin/recovery" target="_blank" rel="noopener noreferrer">Official Google recovery →</a></div>'+
- '<div class="point"><strong>Apple Account (iPhone / iPad)</strong><p>1. Start at Apple’s official password recovery website or device Settings. 2. Follow the instructions for your account and trusted devices. 3. If needed, begin Apple’s account recovery process.</p><p class="ur" lang="ur">ایپل کی اصل ویب سائٹ یا فون کی سیٹنگز استعمال کریں۔</p><a href="https://iforgot.apple.com/" target="_blank" rel="noopener noreferrer">Official Apple password help →</a></div>'+
  '<div class="point"><strong>Microsoft / Outlook</strong><p>1. At the Microsoft account sign-in screen, choose Forgot password. 2. Verify using an approved method. 3. Set a new password when allowed.</p><p class="ur" lang="ur">مائیکروسافٹ کی اصل لاگ اِن اسکرین پر Forgot password دبائیں۔</p><a href="https://account.live.com/password/reset" target="_blank" rel="noopener noreferrer">Official Microsoft password help →</a></div>'+
- '</div><div class="feature"><strong>Important:</strong> A forgotten phone screen-lock PIN is a different issue from a forgotten Google/Apple/Microsoft account password. Do not factory reset the device casually—files may be lost.</div></section>';
+ '</div><div class="feature"><strong>Important:</strong> A forgotten phone screen-lock PIN is different from a forgotten Google or Microsoft account password. Do not factory reset the device casually—files may be lost.</div></section>';
 }
 function mission(l){
  return '<section class="panel"><h3>3. Practise it yourself · خود مشق کریں</h3><div class="action-card"><strong>'+enc(l.task)+'</strong><p class="ur" lang="ur">'+enc(l.taskUr)+'</p><label><input type="checkbox" id="practice" '+(s.practice[s.day]?'checked':'')+'><span>I tried this task · میں نے مشق کی</span></label></div></section>';
 }
 function quizzes(l){
- var html='<section class="panel"><h3>4. Think & choose · سوچ کر جواب دیں</h3><p class="helper">These questions are a little tricky on purpose. All four choices may sound possible! Read carefully. Wrong answers are part of learning.</p>';
+ var html='<section class="panel"><h3>4. Think & choose · سوچ کر جواب دیں</h3><p class="helper">Realistic questions with plausible choices. Pick the best response and learn why it works. You can retry any question.</p>';
  l.qa.forEach(function(q,j){
   var chosen=getAnswers(s.day)[j],correct=chosen===q.answer;
   html+='<div class="quiz"><div class="quizhead">QUESTION '+(j+1)+' OF '+l.qa.length+'</div><h4>'+enc(q.question)+'</h4><div class="answers">';
